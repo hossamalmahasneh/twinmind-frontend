@@ -1,23 +1,38 @@
+# TwinMind Frontend
 
-# TwinMind MVP
+Bilingual English/Arabic Streamlit interface for the TwinMind cognitive journaling MVP.
 
-An AI-powered cognitive twin platform for executives.
+## Included
 
-## How to Run
+- Dashboard with sentiment overview.
+- Multi-source entry capture: journal, email, meeting minutes, thoughts, emotions, insights, voice-note transcripts, calendar context and other entries.
+- Arabic/English interface with RTL support.
+- AI analysis results: summary, sentiment, emotions, well-being suggestion and constructive response suggestion.
+- Cognitive timeline.
+- Memory recall.
+- Seven-day reflection.
 
-1. Install dependencies:
-    ```bash
-    pip install -r requirements.txt
-    ```
+## Run
 
-2. Run the backend (FastAPI):
-    ```bash
-    uvicorn backend.main:app --reload
-    ```
+Start the backend first, then:
 
-3. Run the frontend (Streamlit):
-    ```bash
-    streamlit run frontend/app.py
-    ```
+```bash
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\\Scripts\\activate
+pip install -r requirements.txt
+export API_BASE_URL=http://localhost:8000
+streamlit run app.py
+```
 
-Enjoy building your second brain!
+On Windows PowerShell:
+
+```powershell
+$env:API_BASE_URL="http://localhost:8000"
+streamlit run app.py
+```
+
+## Deployment
+
+Deploy this repository to Streamlit Community Cloud or another Python host and set `API_BASE_URL` to the public URL of the deployed `twinmind-backend` API.
+
+> Sentiment and emotion signals are AI interpretations for reflection and decision support; they are not clinical diagnoses.
